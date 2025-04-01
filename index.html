@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Smart Shopping</h1>
+        <button id="darkModeToggle">🌙</button>
+    </header>
+
+    <section id="scanner">
+        <video id="video" autoplay></video>
+        <button id="startScan">Start Scanner</button>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <button id="checkout">Checkout</button>
+    </section>
+
+    <div id="receiptContainer" class="hidden">
+        <div id="receipt"></div>
+        <button id="printReceipt">Print</button>
+    </div>
+
+    <script src="https://unpkg.com/@zxing/library@0.19.1"></script>
+    <script src="script.js"></script>
+</body>
+</html>
