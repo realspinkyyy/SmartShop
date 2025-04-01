@@ -1,38 +1,47 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: #fff;
+    background-color: #f9f9f9;
     color: #333;
     text-align: center;
-    transition: 0.3s;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Dark Mode Styles */
 .dark-mode {
-    background: #121212;
+    background-color: #121212;
     color: #fff;
 }
+
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
     background: #007bff;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 header h1 {
     font-size: 24px;
     margin: 0;
 }
+
 #darkModeToggle {
     background: #fff;
     border: none;
     color: #007bff;
     padding: 10px;
-    cursor: pointer;
     font-size: 18px;
-    transition: 0.3s;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
 #darkModeToggle:hover {
     background: #007bff;
     color: #fff;
@@ -41,76 +50,92 @@ header h1 {
 /* Scanner Section */
 #scanner {
     padding: 20px;
-    background: #f4f4f4;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-#scanner button {
-    padding: 10px 20px;
+
+#scanner video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#startScan {
+    padding: 12px 25px;
     background: #007bff;
     color: white;
     border: none;
     font-size: 18px;
+    border-radius: 30px;
+    margin-top: 15px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
-#scanner button:hover {
+
+#startScan:hover {
     background: #0056b3;
 }
 
 /* Cart Section */
 #cart {
     padding: 20px;
-    background: #f4f4f4;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 #cartItems {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .cart-item {
     display: flex;
     justify-content: space-between;
     padding: 15px;
     margin: 10px 0;
-    background: #fff;
-    border-radius: 8px;
+    background: #f4f4f4;
+    border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
+
 .cart-item:hover {
     transform: scale(1.02);
 }
+
 .cart-item button {
     background: #007bff;
     color: white;
     border: none;
-    padding: 8px;
+    padding: 8px 15px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
 }
+
 .cart-item button:hover {
     background: #0056b3;
 }
+
 #checkout {
-    padding: 12px 20px;
+    padding: 15px 25px;
     background: #007bff;
     color: white;
     border: none;
     font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
+    border-radius: 30px;
     margin-top: 20px;
-    transition: 0.3s;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
 #checkout:hover {
     background: #0056b3;
 }
@@ -120,32 +145,27 @@ header h1 {
     display: none;
     background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 #receipt {
     text-align: left;
     font-size: 18px;
 }
+
 #printReceipt {
-    padding: 12px 20px;
+    padding: 12px 25px;
     background: #007bff;
     color: white;
     border: none;
     font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
+    border-radius: 30px;
     margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
 #printReceipt:hover {
     background: #0056b3;
-}
-
-/* Animations */
-button, #checkout, #startScan, #darkModeToggle {
-    transition: 0.3s;
-}
-
-.hidden {
-    display: none;
 }
