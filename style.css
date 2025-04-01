@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    text-align: center;
+    transition: 0.3s;
+}
+.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+}
+#scanner video {
+    width: 100%;
+    max-width: 400px;
+}
+button {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+.dark-mode button {
+    background: #444;
+    color: #fff;
+}
+#cart ul {
+    list-style: none;
+    padding: 0;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f4f4f4;
+    margin: 5px;
+    transition: 0.3s;
+}
+.cart-item span {
+    flex-grow: 1;
+}
+.hidden {
+    display: none;
+}
