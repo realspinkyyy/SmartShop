@@ -1,3 +1,4 @@
+// Initialize the cart
 const cart = JSON.parse(localStorage.getItem("cart")) || {};
 const cartItems = document.getElementById("cartItems");
 const scannerButton = document.getElementById("startScan");
@@ -6,9 +7,9 @@ const receiptContainer = document.getElementById("receiptContainer");
 const receipt = document.getElementById("receipt");
 const printButton = document.getElementById("printReceipt");
 const darkModeToggle = document.getElementById("darkModeToggle");
+const beepSound = new Audio("https://www.soundjay.com/button/beep-07.wav");
 
-let beepSound = new Audio("https://www.soundjay.com/button/beep-07.wav");
-
+// Update cart UI
 function updateCartUI() {
     cartItems.innerHTML = "";
     for (let code in cart) {
@@ -26,6 +27,7 @@ function updateCartUI() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// Update item quantity in the cart
 function updateQuantity(code, change) {
     if (cart[code]) {
         cart[code].quantity += change;
@@ -36,6 +38,7 @@ function updateQuantity(code, change) {
     }
 }
 
+// Start barcode scanning
 scannerButton.addEventListener("click", () => {
     const codeReader = new ZXing.BrowserBarcodeReader();
     codeReader.decodeFromInputVideoDevice(undefined, "video").then(result => {
@@ -44,6 +47,7 @@ scannerButton.addEventListener("click", () => {
     }).catch(err => console.error(err));
 });
 
+// Add item to cart
 function addToCart(code) {
     fetch(`https://world.openfoodfacts.org/api/v0/product/${code}.json`)
         .then(response => response.json())
@@ -58,11 +62,12 @@ function addToCart(code) {
                 }
                 updateCartUI();
             } else {
-                alert("Item not found in database.");
+                alert("Item not found in the database.");
             }
         });
 }
 
+// Handle checkout
 checkoutButton.addEventListener("click", () => {
     let total = 0;
     let orderNum = Math.floor(Math.random() * 10000).toString().padStart(4, "0");
@@ -86,11 +91,15 @@ checkoutButton.addEventListener("click", () => {
     cartItems.innerHTML = "";
 });
 
+// Print receipt
 printButton.addEventListener("click", () => {
     window.print();
 });
 
+// Toggle dark mode
 darkModeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 });
+
+// Initial cart UI update
 updateCartUI();
